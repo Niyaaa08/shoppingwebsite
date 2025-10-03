@@ -9,37 +9,83 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
-<link rel="icon" href="assets/images/logocart.png" type="image/x-icon">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!--font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="assets/images/logocart.png" type="image/x-icon">
 </head>
 
 <body>
-  <section class="fashion">
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Logo / Brand -->
+      <a class="navbar-brand" href="#">
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="logo">
+        </div>
+      </a>
+
+      <!-- Toggler button (hamburger) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-end"> <!-- 👈 text-end aligns to right -->
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Signup</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bootstrap JS (needed for dropdown toggle) -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <section class="fashion" data-aos="zoom-in" data-aos-delay="300">
     <div class="container">
       <div class="fashioninner">
-         <div class="row align-items-center">
-           
-        <div class="col-lg-6 textblock">
-          <h1><br><span class="lets">LET’S</span>
-           <br> EXPLORE
-           <br> <span class="unique">UNIQUE</span>
-           <br> CLOTHES.
-          </h1>
-          <p>Live for Influential and Innovative fashion!</p>
-          <button class="shpnw">SHOP NOW
-          </button>
-        </div>
-        
-         <div class="col-lg-6">
-          <div>
-            <img src="assets/images/pinkgirl.png" alt="image">
+        <div class="row align-items-center">
+
+          <div class="col-lg-6 textblock">
+            <h1><br><span class="lets">LET’S</span>
+              <br> EXPLORE
+              <br> <span class="unique">UNIQUE</span>
+              <br> CLOTHES.
+            </h1>
+            <p>Live for Influential and Innovative fashion!</p>
+            <button class="shpnw">SHOP NOW
+            </button>
           </div>
 
-         </div>
-      </div>
+          <div class="col-lg-6">
+            <div>
+              <img src="assets/images/pinkgirl.png" alt="image">
+            </div>
+
+          </div>
+        </div>
 
       </div>
-     
+
 
     </div>
   </section>
@@ -73,9 +119,10 @@
   </section>
   <section class="newarrivals">
     <div class="container">
-      <h1>NEW ARRIVALS</h1>
+      <h1 class="poppins-bold">NEW ARRIVALS</h1>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-right" data-aos-delay="100" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
           <img src="assets/images/img1.png" alt="Image 3">
           <div class="textgroup">
             <div class="left">
@@ -95,7 +142,7 @@
 
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
           <img src="assets/images/newarrivalscenter.png" alt="Image 3">
           <div class="textgroup">
             <div class="left">
@@ -115,7 +162,8 @@
 
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-left" data-aos-delay="100" data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
           <img src="assets/images/newarrivalsright.png" alt="Image 3">
           <div class="textgroup">
             <div class="left">
@@ -144,7 +192,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 left">
-          <img src="assets/images/paynowleft.png" alt="Image 3">
+          <img src="assets/images/paynowleft2.png" alt="Image 3">
         </div>
         <div class="col-lg-6 right ">
           <h1> PAYDAY <br>SALE NOW</h1>
@@ -233,78 +281,128 @@
       <div class="col">
         <h1>JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO</h1>
         <p>Type your email down below and be young wild generation</p>
-        <form class="email-form">
-          <input type="email" placeholder="Add your email here" required>
+        <form id="emailForm" class="email-form">
+          <input type="email" name="email" placeholder="Add your email here" required>
           <button type="submit">Send</button>
         </form>
+
+        <p id="statusMessage" style="margin-top:10px; font-size:14px; color:white; display:none;">
+           Welcome to the community!
+        </p>
+
+        <script>
+          document.getElementById("emailForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // stop page reload
+
+            let emailInput = this.email.value;
+
+            if (emailInput) {
+              // 🔹 Here you can integrate with Formspree, EmailJS, or your backend
+              // For demo, just show success message
+              document.getElementById("statusMessage").style.display = "block";
+              document.getElementById("statusMessage").innerText = "Welcome to the community!";
+
+              this.reset(); // clear input field
+            } else {
+              document.getElementById("statusMessage").style.display = "block";
+              document.getElementById("statusMessage").style.color = "red";
+              document.getElementById("statusMessage").innerText = "⚠ Please enter a valid email.";
+            }
+          });
+        </script>
+
+        <!-- <form class="email-form" action="https://formspree.io/f/your-form-id" method="POST">
+  <input type="email" name="email" placeholder="Add your email here" required>
+  <button type="submit">Send</button>
+</form> -->
+
+        <!-- <form class="email-form">
+          <input type="email" placeholder="Add your email here" required>
+          <button type="submit">Send</button>
+        </form> -->
       </div>
     </div>
   </section>
-  <section class="footer">
-    <div class="footer-container">
-      <div class="footer-section">
-        <img src="assets/images/fashion.png" alt="fashion">
-        <p>Complete your style with awesome clothes from us.</p>
-        <div class="icon">
-          <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
-            <path
-              d="M31.5122 27.4585L32.2065 22.9341H27.8652V19.998C27.8652 18.7603 28.4717 17.5537 30.416 17.5537H32.3896V13.7017C32.3896 13.7017 30.5986 13.396 28.8862 13.396C25.311 13.396 22.9741 15.563 22.9741 19.4858V22.9341H19V27.4585H22.9741V38.396H27.8652V27.4585H31.5122Z"
-              fill="black" />
-          </svg>
-          <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
-            <path
-              d="M25.946 20.7268C22.8406 20.7268 20.3357 23.2317 20.3357 26.3372C20.3357 29.4426 22.8406 31.9475 25.946 31.9475C29.0515 31.9475 31.5564 29.4426 31.5564 26.3372C31.5564 23.2317 29.0515 20.7268 25.946 20.7268ZM25.946 29.9846C23.9392 29.9846 22.2986 28.3489 22.2986 26.3372C22.2986 24.3254 23.9343 22.6897 25.946 22.6897C27.9578 22.6897 29.5935 24.3254 29.5935 26.3372C29.5935 28.3489 27.9529 29.9846 25.946 29.9846ZM33.0945 20.4973C33.0945 21.2249 32.5085 21.8059 31.7859 21.8059C31.0584 21.8059 30.4773 21.22 30.4773 20.4973C30.4773 19.7747 31.0632 19.1887 31.7859 19.1887C32.5085 19.1887 33.0945 19.7747 33.0945 20.4973ZM36.8103 21.8254C36.7273 20.0725 36.3269 18.5198 35.0427 17.2405C33.7634 15.9612 32.2107 15.5608 30.4578 15.4729C28.6511 15.3704 23.2361 15.3704 21.4294 15.4729C19.6814 15.5559 18.1287 15.9563 16.8445 17.2356C15.5603 18.5149 15.1648 20.0676 15.0769 21.8206C14.9744 23.6272 14.9744 29.0422 15.0769 30.8489C15.1599 32.6018 15.5603 34.1545 16.8445 35.4338C18.1287 36.7131 19.6765 37.1135 21.4294 37.2014C23.2361 37.304 28.6511 37.304 30.4578 37.2014C32.2107 37.1184 33.7634 36.718 35.0427 35.4338C36.322 34.1545 36.7224 32.6018 36.8103 30.8489C36.9128 29.0422 36.9128 23.6321 36.8103 21.8254ZM34.4763 32.7874C34.0955 33.7444 33.3582 34.4817 32.3962 34.8674C30.9558 35.4387 27.5378 35.3069 25.946 35.3069C24.3542 35.3069 20.9314 35.4338 19.4958 34.8674C18.5388 34.4866 17.8015 33.7493 17.4158 32.7874C16.8445 31.3469 16.9763 27.929 16.9763 26.3372C16.9763 24.7454 16.8494 21.3225 17.4158 19.887C17.7966 18.9299 18.5339 18.1926 19.4958 17.8069C20.9363 17.2356 24.3542 17.3674 25.946 17.3674C27.5378 17.3674 30.9607 17.2405 32.3962 17.8069C33.3533 18.1877 34.0906 18.925 34.4763 19.887C35.0476 21.3274 34.9158 24.7454 34.9158 26.3372C34.9158 27.929 35.0476 31.3518 34.4763 32.7874Z"
-              fill="black" />
-          </svg>
-          <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
-            <path
-              d="M38.4302 21.4563C38.446 21.6783 38.446 21.9004 38.446 22.1225C38.446 28.8959 33.2906 36.7005 23.868 36.7005C20.9651 36.7005 18.2684 35.8598 16 34.4004C16.4125 34.448 16.809 34.4639 17.2373 34.4639C19.6326 34.4639 21.8375 33.6549 23.5983 32.2748C21.3458 32.2272 19.4581 30.752 18.8077 28.7215C19.125 28.769 19.4422 28.8008 19.7754 28.8008C20.2354 28.8008 20.6955 28.7373 21.1237 28.6263C18.776 28.1504 17.0152 26.0882 17.0152 23.5978V23.5343C17.6973 23.915 18.4905 24.153 19.3312 24.1847C17.9511 23.2646 17.0469 21.6942 17.0469 19.9175C17.0469 18.9658 17.3007 18.0933 17.7449 17.3319C20.2671 20.441 24.0583 22.4714 28.3096 22.6936C28.2303 22.3128 28.1827 21.9163 28.1827 21.5197C28.1827 18.6961 30.4669 16.396 33.3064 16.396C34.7816 16.396 36.1141 17.0146 37.05 18.014C38.208 17.7919 39.3184 17.3636 40.302 16.7767C39.9212 17.9665 39.1122 18.9658 38.0494 19.6003C39.0805 19.4893 40.0799 19.2037 40.9999 18.8072C40.302 19.8224 39.4295 20.7265 38.4302 21.4563Z"
-              fill="black" />
-          </svg>
-          <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
-            <path
-              d="M20.875 34.396H17.4766V21.7163H20.875V34.396ZM17.2773 18.4351C17.2773 17.9272 17.4453 17.5093 17.7812 17.1812C18.125 16.853 18.5898 16.689 19.1758 16.689C19.7539 16.689 20.2148 16.853 20.5586 17.1812C20.9023 17.5093 21.0742 17.9272 21.0742 18.4351C21.0742 18.9507 20.8984 19.3726 20.5469 19.7007C20.2031 20.0288 19.7461 20.1929 19.1758 20.1929C18.6055 20.1929 18.1445 20.0288 17.793 19.7007C17.4492 19.3726 17.2773 18.9507 17.2773 18.4351ZM27.273 21.7163L27.3784 23.1812C28.2847 22.0483 29.4995 21.4819 31.023 21.4819C32.3667 21.4819 33.3667 21.8765 34.023 22.6655C34.6792 23.4546 35.0152 24.6343 35.0308 26.2046V34.396H31.6441V26.2866C31.6441 25.5679 31.4878 25.0483 31.1753 24.728C30.8628 24.3999 30.3433 24.2358 29.6167 24.2358C28.6636 24.2358 27.9488 24.6421 27.4722 25.4546V34.396H24.0855V21.7163H27.273Z"
-              fill="black" />
-          </svg>
+  <footer class="bg-dark text-light py-5 py-md-4">
+    <div class="container">
+      <div class="row">
+        <!-- Logo & Social -->
+        <div class="col-12 col-md-3 mb-4 mb-md-0 text-center text-md-start">
+          <img src="assets/images/fashion.png" alt="fashion" class="img-fluid mb-3" style="max-width:150px;">
+          <p class="text-secondary fs-7 fs-md-6">Complete your style with awesome clothes from us.</p>
+          <div class="icon">
+            <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
+              <path
+                d="M31.5122 27.4585L32.2065 22.9341H27.8652V19.998C27.8652 18.7603 28.4717 17.5537 30.416 17.5537H32.3896V13.7017C32.3896 13.7017 30.5986 13.396 28.8862 13.396C25.311 13.396 22.9741 15.563 22.9741 19.4858V22.9341H19V27.4585H22.9741V38.396H27.8652V27.4585H31.5122Z"
+                fill="black" />
+            </svg>
+            <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
+              <path
+                d="M25.946 20.7268C22.8406 20.7268 20.3357 23.2317 20.3357 26.3372C20.3357 29.4426 22.8406 31.9475 25.946 31.9475C29.0515 31.9475 31.5564 29.4426 31.5564 26.3372C31.5564 23.2317 29.0515 20.7268 25.946 20.7268ZM25.946 29.9846C23.9392 29.9846 22.2986 28.3489 22.2986 26.3372C22.2986 24.3254 23.9343 22.6897 25.946 22.6897C27.9578 22.6897 29.5935 24.3254 29.5935 26.3372C29.5935 28.3489 27.9529 29.9846 25.946 29.9846ZM33.0945 20.4973C33.0945 21.2249 32.5085 21.8059 31.7859 21.8059C31.0584 21.8059 30.4773 21.22 30.4773 20.4973C30.4773 19.7747 31.0632 19.1887 31.7859 19.1887C32.5085 19.1887 33.0945 19.7747 33.0945 20.4973ZM36.8103 21.8254C36.7273 20.0725 36.3269 18.5198 35.0427 17.2405C33.7634 15.9612 32.2107 15.5608 30.4578 15.4729C28.6511 15.3704 23.2361 15.3704 21.4294 15.4729C19.6814 15.5559 18.1287 15.9563 16.8445 17.2356C15.5603 18.5149 15.1648 20.0676 15.0769 21.8206C14.9744 23.6272 14.9744 29.0422 15.0769 30.8489C15.1599 32.6018 15.5603 34.1545 16.8445 35.4338C18.1287 36.7131 19.6765 37.1135 21.4294 37.2014C23.2361 37.304 28.6511 37.304 30.4578 37.2014C32.2107 37.1184 33.7634 36.718 35.0427 35.4338C36.322 34.1545 36.7224 32.6018 36.8103 30.8489C36.9128 29.0422 36.9128 23.6321 36.8103 21.8254ZM34.4763 32.7874C34.0955 33.7444 33.3582 34.4817 32.3962 34.8674C30.9558 35.4387 27.5378 35.3069 25.946 35.3069C24.3542 35.3069 20.9314 35.4338 19.4958 34.8674C18.5388 34.4866 17.8015 33.7493 17.4158 32.7874C16.8445 31.3469 16.9763 27.929 16.9763 26.3372C16.9763 24.7454 16.8494 21.3225 17.4158 19.887C17.7966 18.9299 18.5339 18.1926 19.4958 17.8069C20.9363 17.2356 24.3542 17.3674 25.946 17.3674C27.5378 17.3674 30.9607 17.2405 32.3962 17.8069C33.3533 18.1877 34.0906 18.925 34.4763 19.887C35.0476 21.3274 34.9158 24.7454 34.9158 26.3372C34.9158 27.929 35.0476 31.3518 34.4763 32.7874Z"
+                fill="black" />
+            </svg>
+            <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
+              <path
+                d="M38.4302 21.4563C38.446 21.6783 38.446 21.9004 38.446 22.1225C38.446 28.8959 33.2906 36.7005 23.868 36.7005C20.9651 36.7005 18.2684 35.8598 16 34.4004C16.4125 34.448 16.809 34.4639 17.2373 34.4639C19.6326 34.4639 21.8375 33.6549 23.5983 32.2748C21.3458 32.2272 19.4581 30.752 18.8077 28.7215C19.125 28.769 19.4422 28.8008 19.7754 28.8008C20.2354 28.8008 20.6955 28.7373 21.1237 28.6263C18.776 28.1504 17.0152 26.0882 17.0152 23.5978V23.5343C17.6973 23.915 18.4905 24.153 19.3312 24.1847C17.9511 23.2646 17.0469 21.6942 17.0469 19.9175C17.0469 18.9658 17.3007 18.0933 17.7449 17.3319C20.2671 20.441 24.0583 22.4714 28.3096 22.6936C28.2303 22.3128 28.1827 21.9163 28.1827 21.5197C28.1827 18.6961 30.4669 16.396 33.3064 16.396C34.7816 16.396 36.1141 17.0146 37.05 18.014C38.208 17.7919 39.3184 17.3636 40.302 16.7767C39.9212 17.9665 39.1122 18.9658 38.0494 19.6003C39.0805 19.4893 40.0799 19.2037 40.9999 18.8072C40.302 19.8224 39.4295 20.7265 38.4302 21.4563Z"
+                fill="black" />
+            </svg>
+            <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="0.395996" width="52" height="52" rx="15" fill="#EBD96B" />
+              <path
+                d="M20.875 34.396H17.4766V21.7163H20.875V34.396ZM17.2773 18.4351C17.2773 17.9272 17.4453 17.5093 17.7812 17.1812C18.125 16.853 18.5898 16.689 19.1758 16.689C19.7539 16.689 20.2148 16.853 20.5586 17.1812C20.9023 17.5093 21.0742 17.9272 21.0742 18.4351C21.0742 18.9507 20.8984 19.3726 20.5469 19.7007C20.2031 20.0288 19.7461 20.1929 19.1758 20.1929C18.6055 20.1929 18.1445 20.0288 17.793 19.7007C17.4492 19.3726 17.2773 18.9507 17.2773 18.4351ZM27.273 21.7163L27.3784 23.1812C28.2847 22.0483 29.4995 21.4819 31.023 21.4819C32.3667 21.4819 33.3667 21.8765 34.023 22.6655C34.6792 23.4546 35.0152 24.6343 35.0308 26.2046V34.396H31.6441V26.2866C31.6441 25.5679 31.4878 25.0483 31.1753 24.728C30.8628 24.3999 30.3433 24.2358 29.6167 24.2358C28.6636 24.2358 27.9488 24.6421 27.4722 25.4546V34.396H24.0855V21.7163H27.273Z"
+                fill="black" />
+            </svg>
+          </div>
+        </div>
+        <!-- Company -->
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h4 class="fs-6 fs-md-5">Company</h4>
+          <ul class="list-unstyled mt-2">
+            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">About</a></li>
+            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Contact us</a></li>
+            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Support</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Careers</a></li>
+          </ul>
+        </div>
+        <!-- Quick Link -->
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h4 class="fs-6 fs-md-5">Quick Link</h4>
+          <ul class="list-unstyled mt-2">
+            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Share Location</a>
+            </li>
+            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Orders Tracking</a>
+            </li>
+            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Size Guide</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">FAQs</a></li>
+          </ul>
+        </div>
+        <!-- Legal -->
+        <div class="col-6 col-md-3">
+          <h4 class="fs-6 fs-md-5">Legal</h4>
+          <ul class="list-unstyled mt-2">
+            <li class="mb-2"><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Terms & Conditions</a>
+            </li>
+            <li><a href="#" class="text-secondary text-decoration-none fs-7 fs-md-6">Privacy Policy</a></li>
+          </ul>
         </div>
       </div>
-
-      <div class="footer-section">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Link</h4>
-        <ul>
-          <li><a href="#">Share Location</a></li>
-          <li><a href="#">Orders Tracking</a></li>
-          <li><a href="#">Size Guide</a></li>
-          <li><a href="#">FAQs</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
     </div>
-  </section>
-
-
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 </body>
 
 </html>
